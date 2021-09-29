@@ -93,12 +93,10 @@ Following data will be pre-loaded once you run the application.
 #### Response 201 Created
 ``` json
 
-{
     "id": 8,
     "name": "new-product",
     "description": "this is new product",
     "price": 18.99
-}
 ```
 #### Show complete orders from a User
 ### GET http://localhost:8080/api/v1/orders/user/1
