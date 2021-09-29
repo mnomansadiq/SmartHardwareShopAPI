@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -51,7 +52,6 @@ public class OrderServiceImpl implements OrderService {
         Long userId = orderItemEntity.getUserId();
         User user;
         try {
-
             user = userService.getUser(userId);
         } catch (Exception e) {
             log.error("unable to find the user by id:{} ", userId, e);
@@ -59,12 +59,10 @@ public class OrderServiceImpl implements OrderService {
         }
 
         List<Product> products = new ArrayList<>();
-
         List<ProductEntity> productEntities = orderItemEntity.getProducts();
-        productEntities.forEach(productEntity ->
-                products.add(productService.getProduct(productEntity.getId())));
+        productEntities.forEach(productEntity -> products.add(productService.getProduct(productEntity.getId())));
 
-        OrderItem orderItem = new OrderItem(user, products, orderItemEntity.getOrderDate());
+        OrderItem orderItem = new OrderItem(user, products, new Date());
         return orderRepository.save(orderItem);
     }
 

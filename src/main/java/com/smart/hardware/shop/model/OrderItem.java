@@ -22,8 +22,7 @@ public class OrderItem implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
     private List<Product> products;
-
-
+    
     @Column(name = "local_date", columnDefinition = "DATE")
     private Date orderDate;
 

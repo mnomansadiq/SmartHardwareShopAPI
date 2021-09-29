@@ -53,7 +53,7 @@ class LoadDatabase {
             productSet2.add(product3);
             productSet2.add(product4);
 
-            GregorianCalendar date = new GregorianCalendar(2020, Calendar.FEBRUARY, 10);
+            GregorianCalendar date = new GregorianCalendar(2021, Calendar.SEPTEMBER, 27);
              
             orderRepository.save(new OrderItem(user1, productSet, date.getTime()));
             orderRepository.save(new OrderItem(user1, productSet2, new Date()));

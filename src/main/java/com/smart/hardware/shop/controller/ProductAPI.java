@@ -46,7 +46,7 @@ public class ProductAPI {
     }
 
     @PostMapping("/create")
-    EntityModel<Product> create(ProductEntity p) {
+    EntityModel<Product> create(@RequestBody ProductEntity p) {
         return EntityModel.of(productService.createProduct(new Product(p.getName(),p.getDescription(),p.getPrice())));
     }
 
