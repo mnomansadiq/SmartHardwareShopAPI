@@ -1,14 +1,16 @@
 # OnlineStoreAPI
-Basic Online Store API
 
-Getting Started
+**Getting Started**
 
   1. Clone this project or download.
   2. Run  **'mvn clean package'** to build artifacts.
   3. To run the application: java -jar target/smart_hardware_shop-0.0.1-SNAPSHOT.jar
   4. Run docker container 'docker-compose -f docker-compose.yml up'
-  
-  
+
+**Architecture:**
+![Screenshot](architecture.png)
+
+
 Following data will be pre-loaded once you run the application.
 ### Customers
 | ID          | Name        |
