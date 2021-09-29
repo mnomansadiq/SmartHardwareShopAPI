@@ -30,7 +30,6 @@ public class KeycloakSecurityConfig extends KeycloakWebSecurityConfigurerAdapter
                 .antMatchers("/api/v1/products/create").hasAnyRole("admin")
                 .antMatchers("/api/v1/products/delete").hasAnyRole("admin")
                 .antMatchers("/api/v1/orders").hasAnyRole("customer", "admin")
-                .antMatchers("/test/all-user").hasAnyRole("customer", "admin")
                 .anyRequest()
                 .permitAll();
         http.csrf().disable();

@@ -9,7 +9,7 @@ services:
 #        networks:
 #            - spring-cloud-network
  keycloak:
-     image: mnomansadiq/keycloak-custom:keycloak-with-realm
+     image: mnomansadiq/keycloak-custom:keycloak-with-hardware-shop-realm
      restart: on-failure
      command:
       - "-b"

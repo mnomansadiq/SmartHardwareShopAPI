@@ -7,8 +7,15 @@
   3. To run the application: java -jar target/smart_hardware_shop-0.0.1-SNAPSHOT.jar
   4. Run docker container 'docker-compose -f docker-compose.yml up'
 
+### Background:
+There are 2 types of user for this API, admin and customers. APIs mapping have been done according to the roles which
+has been assigned to the users. for example when an access_token for the admin will generate by the identity server then it would be only use for
+product management APis and customer generated role will not be access this API collection. Some Api can be access by both customer and admin and some might be needed without
+any role. Below system diagram will give more idea that how this system will be work.
+
 **Architecture:**
 ![Screenshot](architecture.png)
+
 
 
 Following data will be pre-loaded once you run the application.
