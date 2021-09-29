@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+# smart-hardware-api:
+#        image: mnomansadiq/simple-app:v4
+#        ports:
+#            - 8001:8001
+#        networks:
+#            - spring-cloud-network
+ keycloak:
+     image: mnomansadiq/keycloak-custom:keycloak-with-realm
+     restart: on-failure
+     command:
+      - "-b"
+      - "0.0.0.0"
+      - "-Dkeycloak.migration.action=import"
+      - "-Dkeycloak.migration.provider=dir"
+      - "-Dkeycloak.migration.dir=/config/"
+      - "-Dkeycloak.migration.strategy=IGNORE_EXISTING"
+     volumes:
+       - ./config:/config/
+     environment:
+       - KEYCLOAK_USER=admin
+       - KEYCLOAK_PASSWORD=admin
+       - KEYCLOAK_LOGLEVEL= DEBUG
+       - ROOT_LOGLEVEL=DEBUG
+     ports:
+       - "8089:8080"
+     networks:
+       - spring-cloud-network
+
+networks:
+    spring-cloud-network:
+        driver: bridge
